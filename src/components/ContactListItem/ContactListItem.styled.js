@@ -1,22 +1,5 @@
 import styled from 'styled-components';
 
-const ContactListStyled = styled.ul`
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-
-  width: 340px;
-  margin: 20px auto;
-
-  padding: 12px 16px;
-  border: 1px solid #2a2a2a;
-  border-radius: 4px;
-
-  font: inherit;
-  line-height: 16px;
-  letter-spacing: 0.01em;
-`;
-
 const ContactItemStyled = styled.li`
   display: flex;
   align-items: center;
@@ -62,9 +45,4 @@ const ContactButton = styled.button`
   }
 `;
 
-export {
-  ContactListStyled,
-  ContactItemStyled,
-  ContactInfoStyled,
-  ContactButton,
-};
+export { ContactItemStyled, ContactInfoStyled, ContactButton };

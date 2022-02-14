@@ -4,7 +4,7 @@ import { getFilter } from '../../redux/contacts/contacts-selectors';
 import { changeFilter } from '../../redux/contacts/contacts-actions';
 
 const Filter = () => {
-  const value = useSelector(getFilter);
+  const filter = useSelector(getFilter);
   const dispatch = useDispatch();
 
   return (
@@ -13,7 +13,7 @@ const Filter = () => {
         Find contacts by name
         <FilterInput
           type="text"
-          value={value}
+          value={filter}
           onChange={e => dispatch(changeFilter(e.target.value))}
         />
       </FilterLabel>

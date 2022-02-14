@@ -6,7 +6,8 @@ import ContactList from './ContactList';
 import ContactForm from './ContactForm';
 import Section from './Section';
 import Container from './Container';
-// import Filter from './Filter';
+
+import Filter from './Filter';
 import { SpinnerTailSpin } from './Spinner/Spinner';
 
 export const ContactPage = () => {
@@ -20,7 +21,8 @@ export const ContactPage = () => {
         {isFetching && <SpinnerTailSpin />}
         <Container title="Contacts">
           <ContactForm />
-          {/* <Filter /> */}
+
+          <Filter />
           {data && (
             <ContactList
               contacts={data}
