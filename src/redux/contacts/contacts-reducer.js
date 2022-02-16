@@ -1,9 +1,9 @@
 // import { combineReducers } from 'redux';
 import { createReducer, combineReducers } from '@reduxjs/toolkit';
-import actions from './contacts-actions';
+import { changeFilter } from './contacts-actions';
 
 const filter = createReducer('', {
-  [actions.changeFilter]: (_, { payload }) => payload,
+  [changeFilter]: (_, { payload }) => payload,
 });
 
 export default combineReducers({ filter });

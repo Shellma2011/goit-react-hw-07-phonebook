@@ -9,7 +9,7 @@ const ContactListItem = ({ id, name, number }) => {
   const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();
 
   return (
-    <ContactItemStyled key={id}>
+    <ContactItemStyled>
       <ContactInfoStyled>{name + ':'}</ContactInfoStyled>
       <ContactInfoStyled>{number}</ContactInfoStyled>
       <ContactButton
