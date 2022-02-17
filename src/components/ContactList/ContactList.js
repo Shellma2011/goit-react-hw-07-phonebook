@@ -1,28 +1,31 @@
-// import PropTypes from 'prop-types';
-// import { useSelector, useDispatch } from 'react-redux';
-// import { deleteContact } from '../../redux/contacts/contacts-actions';
-import { ContactListStyled } from './ContactList.styled';
+import { useFetchContactsQuery } from 'redux/contacts/contacts-slice';
 import ContactListItem from '../ContactListItem';
-// import { getVisibleContacts } from '../../redux/contacts/contacts-selectors';
+import { ContactListStyled } from './ContactList.styled';
+import { getFilter } from 'redux/contacts/contacts-selectors';
+import { useSelector } from 'react-redux';
+import { SpinnerMutatingDots } from '../Spinner/Spinner';
 
-const ContactList = ({ contacts }) => {
+const ContactList = () => {
+  const { data, isFetching } = useFetchContactsQuery();
+
+  const filter = useSelector(getFilter).toLowerCase();
+  const getFiltredContacts = contacts =>
+    contacts.filter(({ name }) => name.toLowerCase().includes(filter));
+  const filtred = data ? getFiltredContacts(data) : [];
+  console.log('data', data);
+  console.log('filtred', filtred);
+
   return (
-    <ContactListStyled>
-      {contacts.map(contact => (
-        <ContactListItem key={contact.id} {...contact} />
-      ))}
-    </ContactListStyled>
+    <>
+      {isFetching && <SpinnerMutatingDots />}
+      <ContactListStyled>
+        {filtred &&
+          filtred.map(contact => (
+            <ContactListItem key={contact.id} {...contact} />
+          ))}
+      </ContactListStyled>
+    </>
   );
 };
-
-// ContactList.propTypes = {
-//   items: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       id: PropTypes.string.isRequired,
-//       name: PropTypes.string.isRequired,
-//       number: PropTypes.string.isRequired,
-//     })
-//   ),
-// };
 
 export default ContactList;

@@ -3,6 +3,8 @@ import {
   ContactItemStyled,
   ContactInfoStyled,
   ContactButton,
+  ContactButtonContainer,
+  ContactName,
 } from './ContactListItem.styled';
 
 const ContactListItem = ({ id, name, number }) => {
@@ -10,15 +12,17 @@ const ContactListItem = ({ id, name, number }) => {
 
   return (
     <ContactItemStyled>
-      <ContactInfoStyled>{name + ':'}</ContactInfoStyled>
+      <ContactName>{name + ':'}</ContactName>
       <ContactInfoStyled>{number}</ContactInfoStyled>
-      <ContactButton
-        type="button"
-        onClick={() => deleteContact(id)}
-        disabled={isDeleting}
-      >
-        {isDeleting ? 'Deleting...' : 'Delete'}
-      </ContactButton>
+      <ContactButtonContainer>
+        <ContactButton
+          type="button"
+          onClick={() => deleteContact(id)}
+          disabled={isDeleting}
+        >
+          {isDeleting ? 'Deleting...' : 'Delete'}
+        </ContactButton>
+      </ContactButtonContainer>
     </ContactItemStyled>
   );
 };

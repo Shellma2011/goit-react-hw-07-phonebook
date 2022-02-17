@@ -14,7 +14,7 @@ import {
   useFetchContactsQuery,
 } from 'redux/contacts/contacts-slice';
 import { SpinnerAudio } from '../Spinner/Spinner';
-// import { toast } from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function ContactForm() {
   const [name, setName] = useState('');
@@ -49,7 +49,8 @@ export default function ContactForm() {
           contact.number === number
       )
     ) {
-      alert(`${name} is already in contacts!`);
+      // alert(`${name} is already in contacts!`);
+      toast.error(`${name} is already in contacts!`);
     } else {
       await createContact({ name, number });
       console.log(name);
@@ -71,6 +72,7 @@ export default function ContactForm() {
 
   return (
     <PhonebookForm onSubmit={handleSubmit}>
+      <Toaster position="top-center" reverseOrder={false} />
       <PhonebookLabel>
         Name
         <PhonebookInput

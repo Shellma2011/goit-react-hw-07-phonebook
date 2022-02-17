@@ -9,11 +9,11 @@ const Title = styled.h1`
 
 const SectionPhonebook = styled.section`
   text-align: center;
-  width: 440px;
+  width: 380px;
   margin: 30px auto;
 
   border: 1px solid grey;
-  border-radius: 2%;
+  border-radius: 25px;
 
   background: white;
   box-shadow: -1px 15px 30px -12px black;
