@@ -27,14 +27,4 @@ const ContactListItem = ({ id, name, number }) => {
   );
 };
 
-// ContactList.propTypes = {
-//   items: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       id: PropTypes.string.isRequired,
-//       name: PropTypes.string.isRequired,
-//       number: PropTypes.string.isRequired,
-//     })
-//   ),
-// };
-
 export default ContactListItem;

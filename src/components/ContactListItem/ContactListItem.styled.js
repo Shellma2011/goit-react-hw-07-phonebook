@@ -3,8 +3,6 @@ import styled from 'styled-components';
 const ContactItemStyled = styled.li`
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* flex-wrap: wrap; */
 
   width: 240px;
   margin: 5px auto;
@@ -12,7 +10,6 @@ const ContactItemStyled = styled.li`
   padding: 12px 16px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  /* box-shadow: -1px 15px 30px -12px black; */
 
   font: inherit;
   line-height: 16px;
@@ -25,7 +22,6 @@ const ContactItemStyled = styled.li`
 `;
 
 const ContactName = styled.p`
-  /* margin-left: 4px; */
   display: flex;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -34,7 +30,6 @@ const ContactName = styled.p`
 `;
 
 const ContactInfoStyled = styled.p`
-  /* margin-left: 4px; */
   display: flex;
   margin-top: 5px;
   margin-bottom: 5px;
